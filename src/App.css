@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Falling Sky';
+  src: url('./assets/fonts/FallingSkyBd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Falling Sky';
+  src: url('./assets/fonts/FallingSky.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Falling Sky';
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #17181D;
+  color: #8C8C8F;
+}
+
+.App {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.New {
+  width: 58%;
+  position: relative;
+}
+
+.Top {
+  width: 38%;
+  position: relative;
+}
