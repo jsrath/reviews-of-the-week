@@ -15,6 +15,13 @@ class Top extends Component {
   getData() {
     fetch('https://thereportoftheweek-api.herokuapp.com/reports')
       .then(response => response.json())
+      .then(items => items.filter(item => item.rating))
+      .then(items =>
+        items.map(item => {
+          item.rating = item.rating.toFixed(1);
+          return item;
+        }),
+      )
       .then(items =>
         items
           .filter(item => item.rating)

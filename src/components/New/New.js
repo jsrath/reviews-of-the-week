@@ -16,6 +16,13 @@ class New extends Component {
   getData() {
     fetch('https://thereportoftheweek-api.herokuapp.com/reports')
       .then(response => response.json())
+      .then(items => items.filter(item => item.rating))
+      .then(items =>
+        items.map(item => {
+          item.rating = item.rating.toFixed(1);
+          return item;
+        }),
+      )
       .then(items => items.sort((a, b) => b.dateReleased.localeCompare(a.dateReleased)).slice(0, 5))
       .then(items => {
         const [first, ...remaining] = items;
