@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactTooltip from 'react-tooltip';
 import './Find.css';
 
 class Find extends Component {
@@ -90,7 +91,9 @@ class Find extends Component {
                 key={item._id}
                 alt={item.videoTitle}
                 src={`https://img.youtube.com/vi/${item.videoCode}/mqdefault.jpg`}
+                data-tip={item.videoTitle}
               />
+              <ReactTooltip effect="solid" place="bottom" border="true" offset={{ top: 45 }} />
               <span className="stars-bottom">
                 <i className="fas fa-star" />
                 {item.rating}
