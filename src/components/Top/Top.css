@@ -1,0 +1,23 @@
+.top-images {
+  width: 48.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 4px 0;
+}
+
+.top-images img {
+  width: 100%;
+  border: 1px solid #8C8C8F;
+  border-radius: 2px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
