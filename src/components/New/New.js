@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import YouTube from 'react-youtube';
 import './New.css';
 
 class New extends Component {
@@ -12,10 +11,6 @@ class New extends Component {
   }
   componentDidMount() {
     this.getData();
-  }
-
-  printStars(number) {
-    return Array(Math.floor(number)).fill(<i className="fas fa-star" />);
   }
 
   getData() {

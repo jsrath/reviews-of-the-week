@@ -1,0 +1,30 @@
+.videos {
+  width: 24.25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 4px 0;
+}
+
+.videos img {
+  width: 100%;
+  border: 1px solid #8C8C8F;
+  border-radius: 2px;
+}
+
+.display {
+  width: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  min-width: 100%;
+}
