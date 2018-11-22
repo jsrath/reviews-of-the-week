@@ -10,6 +10,7 @@ class Find extends Component {
       items: [],
       filtered: [],
       brand: '',
+      rating: '',
     };
   }
   componentDidMount() {
@@ -20,7 +21,7 @@ class Find extends Component {
   getBrands() {
     fetch('https://thereportoftheweek-api.herokuapp.com/reports')
       .then(response => response.json())
-      .then(items => items.map(item => item.manufacturer))
+      .then(items => items.filter(item => item.rating).map(item => item.manufacturer))
       .then(items => [...new Set(items)].sort((a, b) => a.localeCompare(b)))
       .then(brands => this.setState({ brands }));
   }
@@ -50,24 +51,36 @@ class Find extends Component {
     });
   };
 
+  filterByRating = event => {
+    this.setState({ rating: event.target.value.slice(0, 1) }, () => {
+      const filtered = this.state.items.filter(item => item.rating >= this.state.rating);
+      this.setState({ filtered });
+    });
+  };
+
   render() {
     return (
       <div className="container">
+        <h1>Find a Review</h1>
         <div className="Find">
-          <h1>Find a Review</h1>
-          <input type="text" onChange={this.filterByText} value={this.state.text} />
+          <input type="text" placeholder="Filter by Title" onChange={this.filterByText} value={this.state.text} />
           <select className="brand-select" onChange={this.filterByBrand}>
-            <option>Choose a Brand</option>
+            <option>Filter by Brand</option>
             {this.state.brands.map(brand => (
-              <option>{brand}</option>
+              <option key={brand}>{brand}</option>
             ))}
           </select>
-          <select>
-            <option>Choose a Rating</option>
-            <option>Under 5 Stars</option>
-            <option>5+ Stars</option>
-            <option>7+ Stars</option>
-            <option>9+ Stars</option>
+          <select onChange={this.filterByRating}>
+            <option>Filter by Rating</option>
+            <option>1+</option>
+            <option>2+</option>
+            <option>3+</option>
+            <option>4+</option>
+            <option>5+</option>
+            <option>6+</option>
+            <option>7+</option>
+            <option>8+</option>
+            <option>9+</option>
           </select>
         </div>
         <div className="display">
@@ -86,6 +99,10 @@ class Find extends Component {
             </div>
           ))}
         </div>
+        <hr />
+        <p className="footer-text">
+          Developed by <a href="http://www.jsrath.com">jsrath</a>
+        </p>
       </div>
     );
   }

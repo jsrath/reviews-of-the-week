@@ -5,7 +5,7 @@
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  margin: 4px 0;
+  margin: 4px;
 }
 
 .videos img {
@@ -18,13 +18,56 @@
   width: 100%;
   min-width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   position: relative;
+  margin: 30px 0 60px;
+  min-height: 300px;
 }
 
 .container {
   width: 100%;
   min-width: 100%;
+  margin: 30px 0 20px;
+}
+
+input[type="text"], select {
+  height: 40px;
+  font-family: 'Falling Sky';
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 2px;
+  background-color: #1C1D21;
+  border: 1px solid #FDB300;
+  color: #fff;
+  font-weight: 400;
+}
+
+input[type="text"] {
+  width: 40%;
+}
+
+select {
+  width: 27%;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+.Find {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.footer-text a {
+  text-decoration: none;
+  color: #FDB300;
 }
