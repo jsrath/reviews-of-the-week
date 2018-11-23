@@ -1,0 +1,11 @@
+.logo-text {
+  font-size: 48px;
+  margin-left: 20px;
+  line-height: .1;
+  padding: 0;
+  color: #fff;
+}
+
+.logo-text-inner {
+  color: #FDB300;
+}

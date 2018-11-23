@@ -30,6 +30,7 @@
   align-items: flex-end;
   position: relative;
   width: 23%;
+  cursor: pointer;
 }
 
 .bottom-image img {
@@ -68,6 +69,7 @@ button {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .stars {
@@ -89,4 +91,12 @@ button {
   border-radius: 4px;
   background-color: #FDB300;
   color: #17181D;
+}
+
+.bottom-image:hover .text-overlay {
+  opacity: 1;
+}
+
+.text-overlay {
+  font-size: 12px;
 }

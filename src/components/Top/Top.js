@@ -38,6 +38,9 @@ class Top extends Component {
         <div className="top-container">
           {this.state.top.map(item => (
             <div className="top-images" key={item._id}>
+              <div className="text-overlay">
+                <p>{item.videoTitle}</p>
+              </div>
               <img
                 key={item._id}
                 alt={item.videoTitle}

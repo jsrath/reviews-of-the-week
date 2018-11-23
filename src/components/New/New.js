@@ -50,6 +50,9 @@ class New extends Component {
             <div className="new-bottom">
               {this.state.remaining.map(item => (
                 <div key={item._id} className="bottom-image">
+                  <div className="text-overlay">
+                    <p>{item.videoTitle}</p>
+                  </div>
                   <img alt={item.videoTitle} src={`https://img.youtube.com/vi/${item.videoCode}/mqdefault.jpg`} />
                   <span className="stars-bottom">
                     <i className="fas fa-star" />
