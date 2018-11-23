@@ -37,21 +37,25 @@ class New extends Component {
         {this.state.first.rating && (
           <div className="new-top">
             <h4>{this.state.first.videoTitle}</h4>
-            <button>Watch</button>
+            <button data-videoid={this.state.first.videoCode} onClick={this.props.openModal}>
+              Watch
+            </button>
             <span className="stars">
               <i className="fas fa-star" />
               {this.state.first.rating}
             </span>
             <span className="label">{this.state.first.manufacturer}</span>
             <img
+              data-videoid={this.state.first.videoCode}
+              onClick={this.props.openModal}
               alt={this.state.first.videoTitle}
               src={`https://img.youtube.com/vi/${this.state.first.videoCode}/maxresdefault.jpg`}
             />
             <div className="new-bottom">
               {this.state.remaining.map(item => (
                 <div key={item._id} className="bottom-image">
-                  <div className="text-overlay">
-                    <p>{item.videoTitle}</p>
+                  <div data-videoid={item.videoCode} onClick={this.props.openModal} className="text-overlay">
+                    <p data-videoid={item.videoCode}>{item.videoTitle}</p>
                   </div>
                   <img alt={item.videoTitle} src={`https://img.youtube.com/vi/${item.videoCode}/mqdefault.jpg`} />
                   <span className="stars-bottom">

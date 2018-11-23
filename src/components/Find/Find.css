@@ -73,10 +73,6 @@ select {
   color: #FDB300;
 }
 
-.toolie {
-  max-width: 15%;
-}
-
 .videos:hover .text-overlay {
   opacity: 1;
 }

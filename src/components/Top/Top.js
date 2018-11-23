@@ -38,8 +38,8 @@ class Top extends Component {
         <div className="top-container">
           {this.state.top.map(item => (
             <div className="top-images" key={item._id}>
-              <div className="text-overlay">
-                <p>{item.videoTitle}</p>
+              <div data-videoid={item.videoCode} onClick={this.props.openModal} className="text-overlay">
+                <p data-videoid={item.videoCode}>{item.videoTitle}</p>
               </div>
               <img
                 key={item._id}
