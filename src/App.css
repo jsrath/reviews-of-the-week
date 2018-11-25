@@ -123,3 +123,52 @@ hr {
   width: 100%;
   height: 100%;
 }
+
+@media screen and (max-width: 1000px) {
+  .New {
+    width: 100%;
+  }
+  .Top {
+    width: 100%;
+  }
+  .videos {
+    width: 48.5%;
+  }
+  .logo-text {
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .videos {
+    width: 97%;
+  }
+  .Find {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .Find select, .Find input {
+    width: 97%;
+    margin: 10px 0;
+    padding: 0;
+  }
+  ::placeholder, ::-moz-placeholder {
+    padding: 0 5px;
+  }
+  .top-images {
+    width: 97%;
+  }
+  .Header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .new-top h4 {
+    display: none;
+  }
+  .new-top button {
+    display: none;
+  }
+  .new-bottom {
+    display: none;
+  }
+}
