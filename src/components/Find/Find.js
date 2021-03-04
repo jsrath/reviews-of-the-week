@@ -19,7 +19,7 @@ class Find extends Component {
   }
 
   getBrands() {
-    fetch('https://thereportoftheweek-api.herokuapp.com/reports')
+    fetch('https://rotw-api.herokuapp.com/reports')
       .then(response => response.json())
       .then(items => items.filter(item => item.rating).map(item => item.manufacturer))
       .then(items => [...new Set(items)].sort((a, b) => a.localeCompare(b)))
@@ -27,7 +27,7 @@ class Find extends Component {
   }
 
   getData() {
-    fetch('https://thereportoftheweek-api.herokuapp.com/reports')
+    fetch('https://rotw-api.herokuapp.com/reports')
       .then(response => response.json())
       .then(items => items.filter(item => item.rating))
       .then(items =>
@@ -91,7 +91,7 @@ class Find extends Component {
         </div>
         <div className="display">
           {this.state.filtered.map(item => (
-            <div className="videos" key={item._id}>
+            <div className="videos" key={item.videoCode}>
               <div data-videoid={item.videoCode} onClick={this.props.openModal} className="text-overlay">
                 <p data-videoid={item.videoCode}>{item.videoTitle}</p>
               </div>

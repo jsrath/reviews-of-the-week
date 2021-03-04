@@ -14,7 +14,7 @@ class New extends Component {
   }
 
   getData() {
-    fetch('https://thereportoftheweek-api.herokuapp.com/reports')
+    fetch('https://rotw-api.herokuapp.com/reports')
       .then(response => response.json())
       .then(items => items.filter(item => item.rating))
       .then(items =>
@@ -53,7 +53,7 @@ class New extends Component {
             />
             <div className="new-bottom">
               {this.state.remaining.map(item => (
-                <div key={item._id} className="bottom-image">
+                <div key={item.videoCode} className="bottom-image">
                   <div data-videoid={item.videoCode} onClick={this.props.openModal} className="text-overlay">
                     <p data-videoid={item.videoCode}>{item.videoTitle}</p>
                   </div>

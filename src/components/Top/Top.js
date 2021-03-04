@@ -13,7 +13,7 @@ class Top extends Component {
   }
 
   getData() {
-    fetch('https://thereportoftheweek-api.herokuapp.com/reports')
+    fetch('https://rotw-api.herokuapp.com/reports')
       .then(response => response.json())
       .then(items => items.filter(item => item.rating))
       .then(items =>
@@ -37,7 +37,7 @@ class Top extends Component {
         <h1>Top Rated</h1>
         <div className="top-container">
           {this.state.top.map(item => (
-            <div className="top-images" key={item._id}>
+            <div className="top-images" key={item.videoCode}>
               <div data-videoid={item.videoCode} onClick={this.props.openModal} className="text-overlay">
                 <p data-videoid={item.videoCode}>{item.videoTitle}</p>
               </div>
